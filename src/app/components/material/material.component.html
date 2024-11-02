@@ -1,0 +1,43 @@
+<div>
+    <form [formGroup]="myForm">
+        <mat-form-field appearance="outline">
+            <mat-label> Email </mat-label>
+
+            <input type="text" matInput formControlName="email" placeholder="Enter your email" required>
+            @if (myForm.get('email')?.hasError('required') && myForm.get('email')?.touched) {
+            <mat-error>Email is required.</mat-error>
+            <!-- <mat-error>Email is invalid.</mat-error> -->
+            }
+        </mat-form-field>
+
+        <!-- Mat select -->
+        <mat-form-field appearance="outline">
+            <mat-label> Option </mat-label>
+
+            <mat-select formControlName="option" required>
+                <mat-option value="first">First option</mat-option>
+                <mat-option value="second">Second option</mat-option>
+                <mat-option value="third">Third option</mat-option>
+                <mat-option value="fourth">Fourth option</mat-option>
+            </mat-select>
+            @if (myForm.get('option')?.hasError('required') && myForm.get('option')?.touched) {
+            <mat-error>Option must be selected</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- Datepicker -->
+        <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+
+            <input matInput [matDatepicker]="picker" formControlName="someDate" required>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            @if (myForm.get('someDate')?.hasError('required') && myForm.get('someDate')?.touched) {
+            <mat-error>Please choose a date.</mat-error>
+            }
+        </mat-form-field>
+
+        <button mat-flat-button (click)="submitForm()">Submit</button>
+    </form>
+</div>
