@@ -6,11 +6,10 @@ import { RouterOutlet } from '@angular/router';
 import { MaterialComponent } from "./components/material/material.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, MaterialComponent, MatMenuModule, MatIconModule, MatButtonModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [RouterOutlet, MaterialComponent, MatMenuModule, MatIconModule, MatButtonModule],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'angular-with-material';

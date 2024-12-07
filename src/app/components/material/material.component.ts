@@ -13,12 +13,11 @@ import { SignInProps } from '@clerk/clerk-js/dist/types/ui/types';
 import { Theme } from '@clerk/types';
 
 @Component({
-  selector: 'app-material',
-  standalone: true,
-  imports: [MatSlideToggleModule, MatInputModule, MatSelectModule, MatDatepickerModule, ReactiveFormsModule, MatButtonModule, MatMenuModule, MatIconModule],
-  providers: [provideNativeDateAdapter()],
-  templateUrl: './material.component.html',
-  styleUrl: './material.component.scss',
+    selector: 'app-material',
+    imports: [MatSlideToggleModule, MatInputModule, MatSelectModule, MatDatepickerModule, ReactiveFormsModule, MatButtonModule, MatMenuModule, MatIconModule],
+    providers: [provideNativeDateAdapter()],
+    templateUrl: './material.component.html',
+    styleUrl: './material.component.scss'
 })
 export class MaterialComponent {
 
