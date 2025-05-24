@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { RouterOutlet } from '@angular/router';
-import { MaterialComponent } from "./components/material/material.component";
+import { PaymentComponent } from "./components/payment/payment.component";
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, MaterialComponent, MatMenuModule, MatIconModule, MatButtonModule],
+  imports: [MatMenuModule, MatIconModule, MatButtonModule, PaymentComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })

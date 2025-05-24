@@ -1,0 +1,23 @@
+<div class="demo">
+  <google-pay-button
+    [buttonSizeMode]="isCustomSize ? 'fill' : 'static'"
+    [style.width.px]="buttonWidth"
+    [style.height.px]="buttonHeight"
+    [buttonColor]="buttonColor"
+    [buttonType]="buttonType"
+    [paymentRequest]="paymentRequest"
+    [environment]="environment"
+    [buttonLocale]=""
+    (loadpaymentdata)="onLoadPaymentData($event)"
+  >
+  </google-pay-button>
+</div>
+
+<div class="note" [style.display]="isTop ? 'none' : ''">
+  <p>
+    Note: This page may need to open in a new window for it to function
+    correctly.
+  </p>
+
+  <p><a href="/" target="_blank">Open in new window</a>.</p>
+</div>

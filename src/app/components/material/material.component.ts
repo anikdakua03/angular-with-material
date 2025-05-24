@@ -8,7 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
-import { Clerk } from "@clerk/clerk-js";
 import { SignInProps } from '@clerk/clerk-js/dist/types/ui/types';
 import { Theme } from '@clerk/types';
 
@@ -25,7 +24,7 @@ export class MaterialComponent {
 
   key = "";
 
-  clerk = new Clerk(this.key);
+  // clerk = new Clerk(this.key);
 
   signInTheme: Theme = {
     // baseTheme: ,
@@ -53,7 +52,7 @@ export class MaterialComponent {
   constructor(private fb: FormBuilder, private elRef: ElementRef) {
     this.initializeForm();
 
-    this.clerk.load();
+    // this.clerk.load();
 
   }
 
@@ -94,7 +93,7 @@ export class MaterialComponent {
     // const signInDiv = this.elRef.nativeElement.querySelector('#clerk-signin');
     // this.clerk.mountSignIn(signInDiv);
 
-    this.clerk.openGoogleOneTap();
+    // this.clerk.openGoogleOneTap();
 
     // this.clerk.openCreateOrganization(); // feature is turned off 
 
