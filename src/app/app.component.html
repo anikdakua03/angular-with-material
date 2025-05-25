@@ -1,38 +1,79 @@
-<div class="navbar">
-
-
-    <div mat-menu-item>
-        <mat-icon>light_mode</mat-icon>
-        <span>Light</span>
+<div class="min-h-screen flex flex-col">
+  <!-- Header or Navbar -->
+  <mat-toolbar>
+    <div class="flex justify-around place-items-center">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+        (click)="drawer.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <a routerLink="" >My App</a>
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+      >
+        <mat-icon>share</mat-icon>
+      </button>
     </div>
 
-    <div mat-menu-item>
-        <mat-icon>dark_mode</mat-icon>
-        <span>Dark</span>
-    </div>
+  </mat-toolbar>
 
-    <div>
+  <!-- Main Content -->
+  <main class="flex-1 p-1 overflow-y-auto">
+    <!-- Main  -->
+    <mat-drawer-container class="min-h-screen" autosize>
 
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>settings</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-            <div>
-                <div mat-menu-item>
-                    <mat-icon>light_mode</mat-icon>
-                    <span>Light</span>
-                </div>
-                <div mat-menu-item>
-                    <mat-icon>dark_mode</mat-icon>
-                    <span>Dark</span>
-                </div>
-                </div>
-        </mat-menu>
-    </div>
+      <mat-drawer #drawer class="h-full bg-blue-800" mode="over">
+        <mat-list role="list">
 
+          <mat-list-item  role="listitem">
+            <a routerLink="material">Material</a>
+          </mat-list-item>
+
+          <mat-list-item role="listitem">
+            <a routerLink="payment">Payment</a>
+          </mat-list-item>
+
+          <mat-list-item role="listitem">
+            <a routerLink="">Home 1</a>
+          </mat-list-item>
+
+          <mat-list-item role="listitem">
+            <a routerLink="">Home 2</a>
+          </mat-list-item>
+
+          <mat-list-item role="listitem">
+            <a routerLink="">Home 3</a>
+          </mat-list-item>
+
+          <mat-list-item role="listitem">
+            <a routerLink="">Home 4</a>
+          </mat-list-item>
+        </mat-list>
+        
+      </mat-drawer>
+
+      <mat-drawer-content class="p-2 bg-red-200 min-h-screen">
+        <router-outlet/>
+      </mat-drawer-content>
+
+    </mat-drawer-container>
+  </main>
+
+  <!-- Sticky Footer -->
+  <footer class="bottom-10 bg-gray-800 text-white p-4 text-center">
+    Hello footer © 2025 My App. All rights reserved.
+  </footer>
 </div>
-
-<!-- <app-material /> -->
- <app-payment></app-payment>
-
-<!-- <router-outlet></router-outlet> -->

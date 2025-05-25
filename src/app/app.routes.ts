@@ -1,28 +1,24 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { MaterialComponent } from './components/material/material.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { PaymentComponent } from './components/payment/payment.component';
 
 export const routes: Routes = [
     {
         path: "",
         title: "Home",
-        component: AppComponent
+        loadComponent: () => import("../app/components/home/home.component").then(c => c.HomeComponent)
     },
     {
         path: "material",
         title: "Material",
-        component: MaterialComponent
+        loadComponent: () => import("../app/components/material/material.component").then(c => c.MaterialComponent)
     },
     {
         path: "payment",
         title: "Payment",
-        component: PaymentComponent
+        loadComponent: () => import("../app/components/payment/payment.component").then(c => c.PaymentComponent)
     },
     {
         path: "**",
         title: "Not Found",
-        component: PageNotFoundComponent
+        loadComponent: () => import("../app/components/page-not-found/page-not-found.component").then(c => c.PageNotFoundComponent)
     }
 ];
